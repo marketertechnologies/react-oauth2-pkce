@@ -9,7 +9,7 @@ export const toUrlEncoded = (obj: {}): string => {
   return Object.keys(obj)
     .map(
       (k) =>
-        encodeURIComponent(toSnakeCase(k)) + '=' + encodeURIComponent(obj[k])
+        encodeURIComponent(toSnakeCase(k)) + '=' + encodeURIComponent((obj as any)[k])
     )
     .join('&')
 }
